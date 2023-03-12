@@ -1,12 +1,11 @@
 import './App.css';
-import { useViewportSize } from './hooks/useViewportSize';
+import HookViewportComponent from './components/hooksComponents/hookViewportComponent';
 
 function App() {
-  const { height, width } = useViewportSize();
   return (
     <div className="App">
       <header className="App-header">
-        Width: {width}, height: {height}
+        <HookViewportComponent />
       </header>
     </div>
   );
