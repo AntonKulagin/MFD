@@ -1,12 +1,11 @@
 import './App.css';
-import { useHover } from './hooks/useHover';
+import HookHoverComponent from './components/hooksComponents/hookHoverComponent';
 
 function App() {
-  const { hovered, ref } = useHover();
   return (
     <div className="App">
       <header className="App-header">
-        <div ref={ref}>{hovered ? 'На меня навели мышку' : 'Наведи мышкой на меня'}</div>
+        <HookHoverComponent />
       </header>
     </div>
   );
