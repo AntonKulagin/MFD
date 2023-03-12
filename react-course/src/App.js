@@ -3,6 +3,7 @@ import HookLocalStorageComponent from './components/hooksComponents/hookLocalSto
 import HookToggleComponent from './components/hooksComponents/hookToggleComponent';
 import HookHoverComponent from './components/hooksComponents/hookHoverComponent';
 import HookWindowScrollComponent from './components/hooksComponents/hookWindowScrollComponent';
+import HookViewportComponent from './components/hooksComponents/hookViewportComponent';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <HookLocalStorageComponent />
         <HookHoverComponent />
         <HookWindowScrollComponent />
+        <HookViewportComponent />
       </header>
     </div>
   );
