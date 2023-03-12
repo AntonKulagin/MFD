@@ -1,37 +1,31 @@
 import { useCallback, useEffect, useState } from 'react';
-
-const getFetchEndpoint = (params) => {
-  if (params) {
-    return Object.keys(params).map((item) => {
-      if (item === '_limit') {
-        return `?_limit=${params[item]}`;
-      } else {
-        return '';
-      }
-    });
-  }
-  return '';
-};
+import axios from 'axios';
 
 export function useFetch(url) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [isLoading, setLoading] = useState(true);
 
-  const fetching = useCallback((url, params) => {
-    return fetch(url + getFetchEndpoint(params))
-      .then((res) => (res.ok ? res.json() : Promise.reject(res)))
-      .then((json) => setData(json))
-      .catch(() => setError(true))
-      .finally(() => setLoading(false));
+  const fetching = useCallback(async (url, params) => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get(url, {
+        ...params,
+      });
+      setData(data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   useEffect(() => {
     fetching(url);
-  }, [fetching, url]);
+  }, [url]);
 
   const refetch = useCallback(
-    ({ params }) => {
+    (params) => {
       fetching(url, params);
     },
     [fetching, url]
