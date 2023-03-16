@@ -1,0 +1,19 @@
+.radioBlock {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.title {
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 16px;
+}
+.input {
+}

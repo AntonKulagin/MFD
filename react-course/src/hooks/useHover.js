@@ -1,25 +1,25 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
 export function useHover() {
-  const [hovered, setHovered] = useState(false);
+  const [hovered, setHovered] = useState(false)
 
-  const ref = useRef();
+  const ref = useRef()
 
-  const mouseOver = () => setHovered(true);
-  const mouseOut = () => setHovered(false);
+  const mouseOver = () => setHovered(true)
+  const mouseOut = () => setHovered(false)
 
   useEffect(() => {
-    const node = ref.current;
+    const node = ref.current
     if (node) {
-      node.addEventListener('mouseover', mouseOver);
-      node.addEventListener('mouseout', mouseOut);
+      node.addEventListener('mouseover', mouseOver)
+      node.addEventListener('mouseout', mouseOut)
 
       return () => {
-        node.removeEventListener('mouseover', mouseOver);
-        node.removeEventListener('mouseout', mouseOut);
-      };
+        node.removeEventListener('mouseover', mouseOver)
+        node.removeEventListener('mouseout', mouseOut)
+      }
     }
-  }, []);
+  }, [])
 
-  return { hovered, ref };
+  return { hovered, ref }
 }
