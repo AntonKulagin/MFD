@@ -6,7 +6,6 @@ const HookToggleComponent = () => {
   const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal'])
   return (
     <TaskBlock>
-      <hr style={{ width: '90vw' }} />
       <h3>Hook Toggle</h3>
       <button onClick={() => toggle()}>{value}</button>
     </TaskBlock>

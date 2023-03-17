@@ -6,7 +6,6 @@ const HookViewportComponent = () => {
   const { height, width } = useViewportSize()
   return (
     <TaskBlock>
-      <hr style={{ width: '90vw' }} />
       <h3>Hook ViewportComponent</h3>
       <div>
         Width: {width}, height: {height}
