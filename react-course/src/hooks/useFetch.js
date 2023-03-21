@@ -9,10 +9,10 @@ export function useFetch(url) {
   const fetching = useCallback(async (url, params) => {
     try {
       setLoading(true);
-      const { data } = await axios.get(url, {
+      const response = await axios.get(url, {
         ...params,
       });
-      setData(data);
+      setData(response.data);
     } catch (error) {
       setError(error.message);
     } finally {

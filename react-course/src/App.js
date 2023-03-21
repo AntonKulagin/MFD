@@ -4,6 +4,7 @@ import HookToggleComponent from './components/hooksComponents/hookToggleComponen
 import HookHoverComponent from './components/hooksComponents/hookHoverComponent';
 import HookWindowScrollComponent from './components/hooksComponents/hookWindowScrollComponent';
 import HookViewportComponent from './components/hooksComponents/hookViewportComponent';
+import HookFetch from './components/hooksComponents/hookFetch';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <HookHoverComponent />
         <HookWindowScrollComponent />
         <HookViewportComponent />
+        <HookFetch />
       </header>
     </div>
   );
