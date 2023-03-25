@@ -14,6 +14,7 @@ export function App() {
       <header className='App-header'>
         <RouterTask />
         <Login />
+        <RouterTask />
         <HookToggleComponent />
         <HookLocalStorageComponent />
         <HookHoverComponent />
