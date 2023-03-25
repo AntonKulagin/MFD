@@ -6,12 +6,14 @@ import HookWindowScrollComponent from './components/hooksComponents/hookWindowSc
 import HookViewportComponent from './components/hooksComponents/hookViewportComponent'
 import Login from './components/authComponents/Login'
 import HookFetch from './components/hooksComponents/hookFetch'
+import RouterTask from './components/routerDomComponents/RouterTask'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Login />
+        <RouterTask />
         <HookToggleComponent />
         <HookLocalStorageComponent />
         <HookHoverComponent />

@@ -27,6 +27,7 @@
     "react/react-in-jsx-scope": 0,
     "no-console": "warn",
     "prefer-const": "warn",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "import/no-anonymous-default-export": 0
   }
 }

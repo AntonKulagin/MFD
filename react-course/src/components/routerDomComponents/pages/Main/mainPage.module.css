@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main img {
+  max-width: 500px;
+  border-radius: 10px;
+}
