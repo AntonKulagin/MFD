@@ -1,0 +1,18 @@
+.info {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 35px;
+}
+.info__image {
+  flex: 0 0 300px;
+  align-self: start;
+}
+.info__image img {
+  width: 100%;
+  object-fit: contain;
+}
+.info__data span {
+  text-decoration: underline;
+}

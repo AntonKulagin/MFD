@@ -1,0 +1,49 @@
+.location {
+}
+.location__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.location__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.location__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.location__header button {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  color: rgb(226, 154, 255);
+  text-decoration: underline;
+}
+
+.asc {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid rgb(226, 154, 255);
+  position: relative;
+  bottom: 3px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+.desc {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid rgb(226, 154, 255);
+  transition: all 0.3s ease 0s;
+  position: relative;
+  bottom: 2px;
+  cursor: pointer;
+}
