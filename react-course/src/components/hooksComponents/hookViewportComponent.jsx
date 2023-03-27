@@ -1,17 +1,17 @@
-import React from 'react';
-import { useViewportSize } from '../../hooks/useViewportSize';
+import React from 'react'
+import { useViewportSize } from '../../hooks/useViewportSize'
+import TaskBlock from '../UI/taskBlock/TaskBlock'
 
 const HookViewportComponent = () => {
-  const { height, width } = useViewportSize();
+  const { height, width } = useViewportSize()
   return (
-    <div>
-      <hr style={{ width: '90vw' }} />
+    <TaskBlock>
       <h3>Hook ViewportComponent</h3>
       <div>
         Width: {width}, height: {height}
       </div>
-    </div>
-  );
-};
+    </TaskBlock>
+  )
+}
 
-export default HookViewportComponent;
+export default HookViewportComponent
