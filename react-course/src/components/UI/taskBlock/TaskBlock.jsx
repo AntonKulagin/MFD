@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskBlock = ({ children }) => {
+export const TaskBlock = ({ children }) => {
   return (
     <div
       style={{
@@ -13,5 +13,3 @@ const TaskBlock = ({ children }) => {
     </div>
   )
 }
-
-export default TaskBlock

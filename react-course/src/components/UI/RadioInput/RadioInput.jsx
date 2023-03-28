@@ -2,7 +2,7 @@ import React from 'react'
 import s from './radioInput.module.css'
 import { getRandomValue } from '../../../utils/randomValue'
 
-const RadioInput = ({ label, name, value, checked, onChange }) => {
+export const RadioInput = ({ label, name, value, checked, onChange }) => {
   const endpoint = getRandomValue(0, 10000)
   return (
     <div className={s.radioBlock}>
@@ -21,5 +21,3 @@ const RadioInput = ({ label, name, value, checked, onChange }) => {
     </div>
   )
 }
-
-export default RadioInput

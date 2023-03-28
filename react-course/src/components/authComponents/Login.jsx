@@ -1,9 +1,9 @@
 import React from 'react'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import { SignIn } from './SignIn'
+import { SignUp } from './SignUp'
+import { TaskBlock } from '../UI/taskBlock'
 
-const Login = () => {
+export const Login = () => {
   const handleLogin = (data) => {
     console.log('Отправляем login на бэк: ', data)
   }
@@ -14,5 +14,3 @@ const Login = () => {
     </TaskBlock>
   )
 }
-
-export default Login

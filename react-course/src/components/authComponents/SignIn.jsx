@@ -1,15 +1,15 @@
 import React from 'react'
-import Input from '../UI/input/Input'
+import { Input } from '../UI/input'
 import { useHandleForm } from '../../hooks/useHandle'
-import IconEmail from '../UI/iconEmail/IconEmail'
-import MyButton from '../UI/myButton/myButton'
+import { IconEmail } from '../UI/iconEmail'
+import { MyButton } from '../UI/myButton'
 
 const initFields = {
   email: '',
   password: '',
 }
 
-const SignIn = ({ onSubmit }) => {
+export const SignIn = ({ onSubmit }) => {
   const [fieldsData, handleChange, handleSubmit] = useHandleForm(
     initFields,
     onSubmit,
@@ -40,5 +40,3 @@ const SignIn = ({ onSubmit }) => {
     </div>
   )
 }
-
-export default SignIn

@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './radioInput.module.css'
 
-const RadioInputBlock = ({ children, title }) => {
+export const RadioInputBlock = ({ children, title }) => {
   return (
     <div>
       <p className={s.title}>{title}</p>
@@ -9,5 +9,3 @@ const RadioInputBlock = ({ children, title }) => {
     </div>
   )
 }
-
-export default RadioInputBlock

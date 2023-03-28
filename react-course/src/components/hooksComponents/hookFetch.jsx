@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFetch } from '../../hooks/useFetch'
 
-const HookFetch = () => {
+export const HookFetch = () => {
   const { data, isLoading, error, refetch } = useFetch(
     'https://jsonplaceholder.typicode.com/posts',
   )
@@ -21,5 +21,3 @@ const HookFetch = () => {
     </div>
   )
 }
-
-export default HookFetch

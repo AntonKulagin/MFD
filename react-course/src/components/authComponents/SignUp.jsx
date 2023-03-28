@@ -1,10 +1,10 @@
 import React from 'react'
 import { useHandleForm } from '../../hooks/useHandle'
-import Input from '../UI/input/Input'
-import RadioInput from '../UI/RadioInput/RadioInput'
-import RadioInputBlock from '../UI/RadioInput/RadioInputBlock'
-import IconEmail from '../UI/iconEmail/IconEmail'
-import MyButton from '../UI/myButton/myButton'
+import { Input } from '../UI/input/Input'
+import { RadioInput } from '../UI/RadioInput'
+import { RadioInputBlock } from '../UI/RadioInput'
+import { IconEmail } from '../UI/iconEmail'
+import { MyButton } from '../UI/myButton'
 
 const initFields = {
   name: '',
@@ -15,7 +15,7 @@ const initFields = {
   repassword: '',
 }
 
-const SignUp = ({ onSubmit }) => {
+export const SignUp = ({ onSubmit }) => {
   const [fieldsData, handleChange, handleSubmit] = useHandleForm(
     initFields,
     onSubmit,
@@ -82,5 +82,3 @@ const SignUp = ({ onSubmit }) => {
     </div>
   )
 }
-
-export default SignUp
