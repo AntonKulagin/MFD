@@ -1,6 +1,6 @@
 import React from 'react'
 import {useViewportSize} from '../../hooks/useViewportSize'
-import {TaskBlock} from '../UI/taskBlock'
+import { TaskBlock } from '../UI/taskBlock'
 
 export const HookViewportComponent = () => {
   const {height, width} = useViewportSize()

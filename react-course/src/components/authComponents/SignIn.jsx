@@ -1,8 +1,8 @@
 import React from 'react'
-import {Input} from '../UI/input'
+import { Input } from '../UI/input'
 import {useHandleForm} from '../../hooks/useHandle'
-import {IconEmail} from '../UI/iconEmail'
-import {MyButton} from '../UI/myButton'
+import { IconEmail } from '../UI/iconEmail'
+import { MyButton } from '../UI/myButton'
 
 const initFields = {
   email: '',
