@@ -2,7 +2,7 @@ import React from 'react'
 import s from './input.module.css'
 import { getRandomValue } from '../../../utils/randomValue'
 
-const Input = ({ value, type, name, placeholder, icon, onChange }) => {
+export const Input = ({ value, type, name, placeholder, icon, onChange }) => {
   const endpoint = getRandomValue(0, 10000)
 
   const getClassInput = () => {
@@ -33,5 +33,3 @@ const Input = ({ value, type, name, placeholder, icon, onChange }) => {
     </div>
   )
 }
-
-export default Input

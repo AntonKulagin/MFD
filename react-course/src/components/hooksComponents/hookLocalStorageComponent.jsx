@@ -1,8 +1,8 @@
 import React from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
-import TaskBlock from '../UI/TaskBlock/TaskBlock'
+import { TaskBlock } from '../UI/taskBlock'
 
-const HookLocalStorageComponent = () => {
+export const HookLocalStorageComponent = () => {
   const [token, { setItem, removeItem }] = useLocalStorage('token')
   return (
     <TaskBlock>
@@ -15,5 +15,3 @@ const HookLocalStorageComponent = () => {
     </TaskBlock>
   )
 }
-
-export default HookLocalStorageComponent
