@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
 export function useHandleForm(initData, onSubmit) {
   const [data, setData] = useState(initData)

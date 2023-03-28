@@ -1,3 +1,3 @@
-import { MyButton } from './myButton'
+import {MyButton} from './myButton'
 
-export { MyButton }
+export {MyButton}
