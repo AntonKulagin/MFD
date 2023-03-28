@@ -11,8 +11,9 @@
   },
   "plugins": ["react"],
   "rules": {
+    "indent": ["error", 2, {"SwitchCase": 1}],
     "semi": ["error", "never"],
-    "max-len": ["error", { "code": 120 }],
+    "max-len": ["error", {"code": 120}],
     "quotes": ["error", "single"],
     "comma-dangle": ["error", "always-multiline"],
     "space-before-function-paren": [
