@@ -1,7 +1,7 @@
 import React from 'react'
-import {useFetch} from '../../hooks/useFetch'
-import {MyButton} from '../UI/myButton/myButton'
-import {TaskBlock} from '../UI/taskBlock'
+import { useFetch } from '../../hooks/useFetch'
+import { MyButton } from '../UI/myButton/myButton'
+import { TaskBlock } from '../UI/taskBlock'
 
 export const HookFetch = () => {
   const {data, isLoading, error, refetch} = useFetch('https://jsonplaceholder.typicode.com/posts')
