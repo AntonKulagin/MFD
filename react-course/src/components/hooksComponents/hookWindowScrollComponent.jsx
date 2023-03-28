@@ -1,7 +1,7 @@
 import React from 'react'
-import { useWindowScroll } from '../../hooks/useWindowScroll'
-import { TaskBlock } from '../UI/taskBlock'
-import { MyButton } from '../UI/myButton/myButton'
+import {useWindowScroll} from '../../hooks/useWindowScroll'
+import {TaskBlock} from '../UI/taskBlock'
+import {MyButton} from '../UI/myButton/myButton'
 
 export const HookWindowScrollComponent = () => {
   const [scroll, scrollTo] = useWindowScroll()

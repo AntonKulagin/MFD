@@ -1,10 +1,10 @@
 import React from 'react'
 import {useHandleForm} from '../../hooks/useHandle'
-import { Input } from '../UI/input/Input'
-import { RadioInput } from '../UI/RadioInput'
-import { RadioInputBlock } from '../UI/RadioInput'
-import { IconEmail } from '../UI/iconEmail'
-import { MyButton } from '../UI/myButton'
+import {Input} from '../UI/input/Input'
+import {RadioInput} from '../UI/RadioInput'
+import {RadioInputBlock} from '../UI/RadioInput'
+import {IconEmail} from '../UI/iconEmail'
+import {MyButton} from '../UI/myButton'
 
 const initFields = {
   name: '',
