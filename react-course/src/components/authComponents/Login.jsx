@@ -1,7 +1,7 @@
 import React from 'react'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import TaskBlock from '../UI/TaskBlock/TaskBlock'
 
 const Login = () => {
   const handleLogin = (data) => {

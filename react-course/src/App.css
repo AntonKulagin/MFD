@@ -8,10 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
   color: white;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 h1,
@@ -27,7 +24,7 @@ h4 {
   margin-bottom: 20px;
 }
 
-button {
+/* button {
   align-self: center;
   padding: 5px 10px;
   margin: 5px 0px;
@@ -46,4 +43,4 @@ button:hover {
   background: #99a7c2;
   box-shadow: 3px 3px 5px #484e5b, -3px -3px 5px #eaffff;
   color: #282c34;
-}
+} */

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useToggle } from '../../hooks/useToggle'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import TaskBlock from '../UI/TaskBlock/TaskBlock'
 
 const HookToggleComponent = () => {
   const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal'])

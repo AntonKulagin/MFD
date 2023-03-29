@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import TaskBlock from '../UI/TaskBlock/TaskBlock'
 
 const HookLocalStorageComponent = () => {
   const [token, { setItem, removeItem }] = useLocalStorage('token')

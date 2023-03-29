@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHover } from '../../hooks/useHover'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import TaskBlock from '../UI/TaskBlock/TaskBlock'
 
 const HookHoverComponent = () => {
   const { hovered, ref } = useHover()

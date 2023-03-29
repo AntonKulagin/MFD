@@ -1,6 +1,6 @@
 import React from 'react'
 import { useWindowScroll } from '../../hooks/useWindowScroll'
-import TaskBlock from '../UI/taskBlock/TaskBlock'
+import TaskBlock from '../UI/TaskBlock/TaskBlock'
 
 const HookWindowScrollComponent = () => {
   const [scroll, scrollTo] = useWindowScroll()
