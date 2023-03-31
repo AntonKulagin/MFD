@@ -1,3 +1,3 @@
-import { TaskBlock } from './TaskBlock'
+import {TaskBlock} from './TaskBlock'
 
-export { TaskBlock }
+export {TaskBlock}

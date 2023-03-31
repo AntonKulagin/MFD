@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './radioInput.module.css'
-import { getRandomValue } from '../../../utils/randomValue'
+import {getRandomValue} from '../../../utils/randomValue'
 
-export const RadioInput = ({ label, name, value, checked, onChange }) => {
+export const RadioInput = ({label, name, value, checked, onChange}) => {
   const endpoint = getRandomValue(0, 10000)
   return (
     <div className={s.radioBlock}>
@@ -11,7 +11,7 @@ export const RadioInput = ({ label, name, value, checked, onChange }) => {
       </label>
       <input
         className={s.input}
-        type="radio"
+        type='radio'
         name={name}
         value={value}
         id={value + '_' + endpoint}

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useWindowEvent } from './useWindowEvent'
+import {useState} from 'react'
+import {useWindowEvent} from './useWindowEvent'
 
 const initialScroll = {
   x: window.scrollX.toFixed(),
@@ -9,12 +9,12 @@ const initialScroll = {
 export function useWindowScroll() {
   const [scroll, setScroll] = useState(initialScroll)
 
-  const scrollTo = ({ y }) => {
+  const scrollTo = ({y}) => {
     window.scrollTo(scroll.x, y)
   }
 
   const saveScroll = () => {
-    setScroll({ x: window.scrollX.toFixed(), y: window.scrollY.toFixed() })
+    setScroll({x: window.scrollX.toFixed(), y: window.scrollY.toFixed()})
   }
 
   useWindowEvent('scroll', saveScroll)

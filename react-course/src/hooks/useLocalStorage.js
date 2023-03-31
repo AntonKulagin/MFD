@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
 function getToken(key) {
   const savedToken = JSON.parse(localStorage.getItem(key))
@@ -20,5 +20,5 @@ export function useLocalStorage(key) {
     localStorage.clear()
     setToken('')
   }
-  return [token, { setItem, removeItem }]
+  return [token, {setItem, removeItem}]
 }

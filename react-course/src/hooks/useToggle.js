@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import {useReducer} from 'react'
 
 const getInitialState = (data) => {
   if (Array.isArray(data)) {
