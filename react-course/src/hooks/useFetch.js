@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import {useCallback, useEffect, useState} from 'react'
 import axios from 'axios'
 
 export function useFetch(url) {
@@ -31,5 +31,5 @@ export function useFetch(url) {
     [fetching, url],
   )
 
-  return { data, isLoading, error, refetch }
+  return {data, isLoading, error, refetch}
 }

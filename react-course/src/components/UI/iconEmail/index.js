@@ -1,3 +1,3 @@
-import { IconEmail } from './IconEmail'
+import {IconEmail} from './IconEmail'
 
-export { IconEmail }
+export {IconEmail}

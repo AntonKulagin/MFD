@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TaskBlock = ({ children }) => {
+export const TaskBlock = ({children}) => {
   return (
     <div
       style={{
