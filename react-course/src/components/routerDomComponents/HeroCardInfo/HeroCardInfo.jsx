@@ -9,7 +9,7 @@ export const HeroCardInfo = () => {
   const [hero, setHero] = useState(null)
 
   useEffect(() => {
-    fetch(API.characters.getById(heroId).then((data) => setHero(data)))
+    API.characters.getById(heroId).then((data) => setHero(data))
   }, [heroId])
 
   if (hero) {

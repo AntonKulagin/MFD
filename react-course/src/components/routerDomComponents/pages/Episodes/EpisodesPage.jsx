@@ -12,7 +12,15 @@ export const EpisodesPage = () => {
   const sort = sortParams.get('sort')
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch(API.episodes.getAll().then((data) => (sort ? setEpisodes(getSortItems(data, sort)) : setEpisodes(data))))
+=======
+    API.episodes
+      .getAll()
+      .then((data) =>
+        sort ? setEpisodes(getSortItems(data, sort)) : setEpisodes(data),
+      )
+>>>>>>> 52a2bee (created task context)
   }, [])
 
   useEffect(() => {

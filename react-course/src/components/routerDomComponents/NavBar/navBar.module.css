@@ -18,3 +18,9 @@
 .navbar .active {
   color: rgb(250, 101, 255);
 }
+.logout {
+  background-color: transparent;
+}
+.logout img {
+  height: 20px;
+}

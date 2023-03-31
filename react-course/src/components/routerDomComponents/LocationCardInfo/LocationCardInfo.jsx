@@ -9,7 +9,7 @@ export const LocationCardInfo = () => {
   const [location, setLocation] = useState(null)
 
   useEffect(() => {
-    fetch(API.location.getById(locId).then((data) => setLocation(data)))
+    API.location.getById(locId).then((data) => setLocation(data))
   }, [locId])
 
   if (location) {
