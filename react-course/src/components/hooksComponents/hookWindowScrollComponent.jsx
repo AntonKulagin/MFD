@@ -1,7 +1,7 @@
 import React from 'react'
-import { useWindowScroll } from '../../hooks/useWindowScroll'
-import { TaskBlock } from '../UI/taskBlock'
-import { MyButton } from '../UI/myButton/myButton'
+import {useWindowScroll} from '../../hooks/useWindowScroll'
+import {TaskBlock} from '../UI/taskBlock'
+import {MyButton} from '../UI/myButton/myButton'
 
 export const HookWindowScrollComponent = () => {
   const [scroll, scrollTo] = useWindowScroll()
@@ -11,7 +11,7 @@ export const HookWindowScrollComponent = () => {
       <p>
         Scroll position x: {scroll.x}, y: {scroll.y}
       </p>
-      <MyButton onClick={() => scrollTo({ y: 0 })}>Scroll to top</MyButton>
+      <MyButton onClick={() => scrollTo({y: 0})}>Scroll to top</MyButton>
     </TaskBlock>
   )
 }

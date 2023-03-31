@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 export function useHover() {
   const [hovered, setHovered] = useState(false)
@@ -21,5 +21,5 @@ export function useHover() {
     }
   }, [])
 
-  return { hovered, ref }
+  return {hovered, ref}
 }
