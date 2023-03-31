@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import cl from './HeroCardInfo.module.css'
-import { useParams } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import API from '../../../API'
-import Loader from '../Loader/Loader'
+import {Loader} from '../Loader'
 
-const HeroCardInfo = () => {
-  const { heroId } = useParams()
+export const HeroCardInfo = () => {
+  const {heroId} = useParams()
   const [hero, setHero] = useState(null)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const HeroCardInfo = () => {
     return (
       <div className={cl.info}>
         <div className={cl.info__image}>
-          <img src={hero.image} alt="hero" />
+          <img src={hero.image} alt='hero' />
         </div>
         <div className={cl.info__data}>
           <div className={cl.data__name}>
@@ -44,5 +44,3 @@ const HeroCardInfo = () => {
     return <Loader />
   }
 }
-
-export default HeroCardInfo

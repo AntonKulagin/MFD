@@ -1,3 +1,3 @@
-import EpisodeCardInfo from './EpisodeCardInfo'
+import {EpisodeCardInfo} from './EpisodeCardInfo'
 
 export {EpisodeCardInfo}

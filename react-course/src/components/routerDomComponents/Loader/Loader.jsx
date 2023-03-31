@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './loader.module.css'
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <div className={cl.loaderPosition}>
       <div className={cl.lds_spinner}>
@@ -21,5 +21,3 @@ const Loader = () => {
     </div>
   )
 }
-
-export default Loader

@@ -1,8 +1,8 @@
 import React from 'react'
 import cl from './LocationCard.module.css'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-const LocationCard = ({ location }) => {
+export const LocationCard = ({location}) => {
   return (
     <Link to={`${location.id}`}>
       <div key={location.id} className={cl.location__card}>
@@ -11,5 +11,3 @@ const LocationCard = ({ location }) => {
     </Link>
   )
 }
-
-export default LocationCard

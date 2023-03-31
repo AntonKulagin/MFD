@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import API from '../../../../API'
 import cl from './episodesPage.module.css'
-import EpisodeCard from '../../EpisodeCard/EpisodeCard'
-import Loader from '../../Loader/Loader'
-import { useSearchParams } from 'react-router-dom'
-import { getSortItems } from '../../../../utils/sort'
+import {EpisodeCard} from '../../EpisodeCard'
+import {Loader} from '../../Loader'
+import {useSearchParams} from 'react-router-dom'
+import {getSortItems} from '../../../../utils/sort'
 
-const EpisodesPage = () => {
+export const EpisodesPage = () => {
   const [episodes, setEpisodes] = useState(null)
   const [sortParams, setSortParams] = useSearchParams({})
   const sort = sortParams.get('sort')
 
   useEffect(() => {
-    fetch(
-      API.episodes
-        .getAll()
-        .then((data) =>
-          sort ? setEpisodes(getSortItems(data, sort)) : setEpisodes(data),
-        ),
-    )
+    fetch(API.episodes.getAll().then((data) => (sort ? setEpisodes(getSortItems(data, sort)) : setEpisodes(data))))
   }, [])
 
   useEffect(() => {
@@ -28,7 +22,7 @@ const EpisodesPage = () => {
   }, [sort])
 
   const handleSort = () => {
-    setSortParams({ sort: sort === 'asc' ? 'desc' : 'asc' })
+    setSortParams({sort: sort === 'asc' ? 'desc' : 'asc'})
   }
 
   const getSortClass = () => {
@@ -55,5 +49,3 @@ const EpisodesPage = () => {
     )
   } else return <Loader />
 }
-
-export default EpisodesPage
