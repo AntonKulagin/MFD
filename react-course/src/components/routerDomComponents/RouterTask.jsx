@@ -10,11 +10,11 @@ import {HeroCardInfo} from './HeroCardInfo'
 import {LocationCardInfo} from './LocationCardInfo'
 import {EpisodeCardInfo} from './EpisodeCardInfo'
 import {NotFound404} from './pages/404'
-import {TaskBlock} from '../UI/TaskBlock'
+import {TaskWrapper} from '../UI/taskWrapper'
 
 export const RouterTask = () => {
   return (
-    <TaskBlock height='300px'>
+    <TaskWrapper height='300px'>
       <FlexColumn>
         <NavBar />
         <Routes>
@@ -34,6 +34,6 @@ export const RouterTask = () => {
           <Route path='*' element={<NotFound404 />} />
         </Routes>
       </FlexColumn>
-    </TaskBlock>
+    </TaskWrapper>
   )
 }
