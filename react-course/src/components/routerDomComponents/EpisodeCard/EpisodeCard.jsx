@@ -1,8 +1,8 @@
 import React from 'react'
 import cl from './episodeCard.module.css'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-const EpisodeCard = ({ episode }) => {
+export const EpisodeCard = ({episode}) => {
   return (
     <Link to={`${episode.id}`}>
       <div className={cl.episode__card}>
@@ -11,5 +11,3 @@ const EpisodeCard = ({ episode }) => {
     </Link>
   )
 }
-
-export default EpisodeCard

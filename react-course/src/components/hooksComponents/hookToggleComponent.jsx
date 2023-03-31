@@ -1,6 +1,6 @@
 import React from 'react'
 import {useToggle} from '../../hooks/useToggle'
-import {TaskBlock} from '../UI/taskBlock'
+import {TaskBlock} from '../UI/TaskBlock'
 import {MyButton} from '../UI/myButton/myButton'
 
 export const HookToggleComponent = () => {

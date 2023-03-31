@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import cl from './heroesPage.module.css'
-import HeroCard from '../../HeroCard/HeroCard'
+import {HeroCard} from '../../HeroCard'
 import API from '../../../../API'
-import Loader from '../../Loader/Loader'
-import { useSearchParams } from 'react-router-dom'
-import { getSortItems } from '../../../../utils/sort'
+import {Loader} from '../../Loader'
+import {useSearchParams} from 'react-router-dom'
+import {getSortItems} from '../../../../utils/sort'
 
-const HeroesPage = () => {
+export const HeroesPage = () => {
   const [heroes, setHeroes] = useState(null)
   const [sortParams, setSortParams] = useSearchParams({})
   const sort = sortParams.get('sort')
 
   useEffect(() => {
-    fetch(
-      API.characters
-        .getAll()
-        .then((data) =>
-          sort ? setHeroes(getSortItems(data, sort)) : setHeroes(data),
-        ),
-    )
+    fetch(API.characters.getAll().then((data) => (sort ? setHeroes(getSortItems(data, sort)) : setHeroes(data))))
   }, [])
 
   useEffect(() => {
@@ -28,7 +22,7 @@ const HeroesPage = () => {
   }, [sortParams])
 
   const handleSort = () => {
-    setSortParams({ sort: sort === 'asc' ? 'desc' : 'asc' })
+    setSortParams({sort: sort === 'asc' ? 'desc' : 'asc'})
   }
 
   const getSortClass = () => {
@@ -55,5 +49,3 @@ const HeroesPage = () => {
     )
   } else return <Loader />
 }
-
-export default HeroesPage

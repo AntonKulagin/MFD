@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import cl from './LocationCardInfo.module.css'
-import { useParams } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import API from '../../../API'
-import Loader from '../Loader/Loader'
+import {Loader} from '../Loader'
 
-const LocationCardInfo = () => {
-  const { locId } = useParams()
+export const LocationCardInfo = () => {
+  const {locId} = useParams()
   const [location, setLocation] = useState(null)
 
   useEffect(() => {
@@ -36,5 +36,3 @@ const LocationCardInfo = () => {
     return <Loader />
   }
 }
-
-export default LocationCardInfo

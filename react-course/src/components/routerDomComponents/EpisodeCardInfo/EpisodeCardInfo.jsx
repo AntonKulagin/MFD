@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import API from '../../../API'
 import cl from './EpisodeCardInfo.module.css'
-import Loader from '../Loader/Loader'
+import {Loader} from '../Loader'
 
-const EpisodeCardInfo = () => {
-  const { episodeId } = useParams()
+export const EpisodeCardInfo = () => {
+  const {episodeId} = useParams()
   const [episode, setEpisode] = useState(null)
 
   useEffect(() => {
@@ -36,5 +36,3 @@ const EpisodeCardInfo = () => {
     return <Loader />
   }
 }
-
-export default EpisodeCardInfo
