@@ -12,15 +12,7 @@ export const LocationsPage = () => {
   const sort = sortParams.get('sort')
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch(API.location.getAll().then((data) => (sort ? setLocations(getSortItems(data, sort)) : setLocations(data))))
-=======
-    API.location
-      .getAll()
-      .then((data) =>
-        sort ? setLocations(getSortItems(data, sort)) : setLocations(data),
-      )
->>>>>>> 52a2bee (created task context)
+    API.location.getAll().then((data) => (sort ? setLocations(getSortItems(data, sort)) : setLocations(data)))
   }, [])
 
   useEffect(() => {

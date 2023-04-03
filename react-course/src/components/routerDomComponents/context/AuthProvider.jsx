@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import {createContext, useContext, useState} from 'react'
 
 const AuthContext = createContext()
 
@@ -6,10 +6,8 @@ export const useAuth = () => {
   return useContext(AuthContext)
 }
 
-export const AuthProvider = ({ children }) => {
-  const [userEmail, setUserEmail] = useState(
-    () => localStorage.getItem('userEmail') || null,
-  )
+export const AuthProvider = ({children}) => {
+  const [userEmail, setUserEmail] = useState(() => localStorage.getItem('userEmail') || null)
 
   const signin = (newUserEmail, callback) => {
     setUserEmail(newUserEmail)

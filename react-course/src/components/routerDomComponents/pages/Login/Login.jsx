@@ -1,6 +1,6 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import SignIn from '../../../authComponents/SignIn'
-import { useAuth } from '../../context/AuthProvider'
+import {useLocation, useNavigate} from 'react-router-dom'
+import {SignIn} from '../../../authComponents/SignIn'
+import {useAuth} from '../../context/AuthProvider'
 import cl from './login.module.css'
 
 export const Login = () => {
@@ -11,7 +11,7 @@ export const Login = () => {
   const from = location.state?.from || '/'
 
   const handleSubmit = (data) => {
-    const userEmail = data.email
+    const userEmail = data.email ? data.email : null
     auth.signin(userEmail, () => {
       navigate(from, {
         replace: true,
