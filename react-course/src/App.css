@@ -1,0 +1,25 @@
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
