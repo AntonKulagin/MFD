@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {forwardRef} from 'react'
 import cl from './heroCard.module.css'
 import {Link} from 'react-router-dom'
 
-export const HeroCard = ({hero}) => {
+// eslint-disable-next-line react/display-name
+export const HeroCard = forwardRef(({hero}, ref) => {
   return (
     <Link to={`${hero.id}`}>
-      <div key={hero.id} className={cl.hero__card}>
+      <div ref={ref} className={cl.hero__card}>
         <div className={cl.hero__image}>
           <img src={hero.image} alt='hero' />
         </div>
@@ -13,4 +14,4 @@ export const HeroCard = ({hero}) => {
       </div>
     </Link>
   )
-}
+})

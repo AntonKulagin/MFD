@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react'
 import cl from './HeroCardInfo.module.css'
 import {useParams} from 'react-router-dom'
-import API from '../../../API'
 import {Loader} from '../Loader'
+import {useCategoryById} from '../../../hooks/useCategoryById'
 
 export const HeroCardInfo = () => {
   const {heroId} = useParams()
-  const [hero, setHero] = useState(null)
 
-  useEffect(() => {
-    API.characters.getById(heroId).then((data) => setHero(data))
-  }, [heroId])
+  const {loading, error, itemById: hero} = useCategoryById('character', heroId)
 
-  if (hero) {
-    return (
+  return (
+    <>
       <div className={cl.info}>
         <div className={cl.info__image}>
           <img src={hero.image} alt='hero' />
@@ -39,8 +35,8 @@ export const HeroCardInfo = () => {
           </div>
         </div>
       </div>
-    )
-  } else {
-    return <Loader />
-  }
+      {loading && <Loader />}
+      {error && <div className={cl.error}>{error}</div>}
+    </>
+  )
 }
