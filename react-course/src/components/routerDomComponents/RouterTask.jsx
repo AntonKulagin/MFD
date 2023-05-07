@@ -11,6 +11,8 @@ import {LocationCardInfo} from './LocationCardInfo'
 import {EpisodeCardInfo} from './EpisodeCardInfo'
 import {NotFound404} from './pages/404'
 import {TaskWrapper} from '../UI/taskWrapper'
+import {Login} from './pages/Login'
+import {PrivateRouter} from './PrivateRouter'
 
 export const RouterTask = () => {
   return (
@@ -19,18 +21,19 @@ export const RouterTask = () => {
         <NavBar />
         <Routes>
           <Route path='' element={<MainPage />} />
-          <Route path='heroes'>
+          <Route path='heroes' element={<PrivateRouter />}>
             <Route index element={<HeroesPage />} />
             <Route path=':heroId' element={<HeroCardInfo />} />
           </Route>
-          <Route path='locations'>
+          <Route path='locations' element={<PrivateRouter />}>
             <Route index element={<LocationsPage />} />
             <Route path=':locId' element={<LocationCardInfo />} />
           </Route>
-          <Route path='episodes'>
+          <Route path='episodes' element={<PrivateRouter />}>
             <Route index element={<EpisodesPage />} />
             <Route path=':episodeId' element={<EpisodeCardInfo />} />
           </Route>
+          <Route path='login' element={<Login />} />
           <Route path='*' element={<NotFound404 />} />
         </Routes>
       </FlexColumn>

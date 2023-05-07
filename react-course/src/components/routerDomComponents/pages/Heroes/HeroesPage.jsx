@@ -12,7 +12,7 @@ export const HeroesPage = () => {
   const sort = sortParams.get('sort')
 
   useEffect(() => {
-    fetch(API.characters.getAll().then((data) => (sort ? setHeroes(getSortItems(data, sort)) : setHeroes(data))))
+    API.characters.getAll().then((data) => (sort ? setHeroes(getSortItems(data, sort)) : setHeroes(data)))
   }, [])
 
   useEffect(() => {

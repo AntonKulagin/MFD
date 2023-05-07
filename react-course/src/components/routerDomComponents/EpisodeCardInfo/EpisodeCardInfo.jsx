@@ -9,7 +9,7 @@ export const EpisodeCardInfo = () => {
   const [episode, setEpisode] = useState(null)
 
   useEffect(() => {
-    fetch(API.episodes.getById(episodeId).then((data) => setEpisode(data)))
+    API.episodes.getById(episodeId).then((data) => setEpisode(data))
   }, [episodeId])
 
   if (episode) {

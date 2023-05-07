@@ -12,7 +12,7 @@ export const LocationsPage = () => {
   const sort = sortParams.get('sort')
 
   useEffect(() => {
-    fetch(API.location.getAll().then((data) => (sort ? setLocations(getSortItems(data, sort)) : setLocations(data))))
+    API.location.getAll().then((data) => (sort ? setLocations(getSortItems(data, sort)) : setLocations(data)))
   }, [])
 
   useEffect(() => {

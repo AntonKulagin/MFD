@@ -7,12 +7,15 @@ import {HookViewportComponent} from './components/hooksComponents/hookViewportCo
 import {Login} from './components/authComponents/Login'
 import {HookFetch} from './components/hooksComponents/hookFetch'
 import {RouterTask} from './components/routerDomComponents/RouterTask'
+import {AuthProvider} from './components/routerDomComponents/context/AuthProvider'
 
 export function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <RouterTask />
+        <AuthProvider>
+          <RouterTask />
+        </AuthProvider>
         <Login />
         <HookToggleComponent />
         <HookLocalStorageComponent />
