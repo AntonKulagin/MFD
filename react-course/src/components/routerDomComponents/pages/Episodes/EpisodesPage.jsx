@@ -1,25 +1,42 @@
-import React, {useEffect, useState} from 'react'
-import API from '../../../../API'
+import React, {useCallback, useEffect, useRef, useState} from 'react'
 import cl from './episodesPage.module.css'
 import {EpisodeCard} from '../../EpisodeCard'
 import {Loader} from '../../Loader'
 import {useSearchParams} from 'react-router-dom'
 import {getSortItems} from '../../../../utils/sort'
+import {useCategory} from '../../../../hooks/useCategory'
 
 export const EpisodesPage = () => {
-  const [episodes, setEpisodes] = useState(null)
+  const [episodes, setEpisodes] = useState([])
+  const [pageNumber, setPageNumber] = useState(1)
   const [sortParams, setSortParams] = useSearchParams({})
   const sort = sortParams.get('sort')
+  const observer = useRef()
+
+  const {loading, error, categoryItems, hasMore} = useCategory('episode', pageNumber)
 
   useEffect(() => {
-    API.episodes.getAll().then((data) => (sort ? setEpisodes(getSortItems(data, sort)) : setEpisodes(data)))
-  }, [])
+    setEpisodes(getSortItems(categoryItems, sort))
+  }, [categoryItems, sort])
 
-  useEffect(() => {
-    if (episodes) {
-      setEpisodes(getSortItems(episodes, sort))
-    }
-  }, [sort])
+  const lastNodeRef = useCallback(
+    (node) => {
+      if (loading) return
+      if (observer.current) {
+        observer.current.disconnect()
+      }
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPageNumber((prev) => prev + 1)
+        }
+      })
+
+      if (node) {
+        observer.current.observe(node)
+      }
+    },
+    [loading, hasMore],
+  )
 
   const handleSort = () => {
     setSortParams({sort: sort === 'asc' ? 'desc' : 'asc'})
@@ -30,8 +47,8 @@ export const EpisodesPage = () => {
     return sort === 'asc' ? `${cl.asc}` : `${cl.desc}`
   }
 
-  if (episodes) {
-    return (
+  return (
+    <>
       <div className={cl.episodes}>
         <div className={cl.episodes__header}>
           <div className={cl.episodes__title}>Эпизоды</div>
@@ -41,11 +58,17 @@ export const EpisodesPage = () => {
         </div>
 
         <div className={cl.episodes__body}>
-          {episodes.map((episode) => (
-            <EpisodeCard key={episode.id} episode={episode} />
-          ))}
+          {episodes.map((episode, index) => {
+            if (episodes.length - 6 === index + 1) {
+              return <EpisodeCard ref={lastNodeRef} key={episode.id} episode={episode} />
+            } else {
+              return <EpisodeCard key={episode.id} episode={episode} />
+            }
+          })}
         </div>
       </div>
-    )
-  } else return <Loader />
+      {loading && <Loader />}
+      {error && <div className={cl.error}>{error}</div>}
+    </>
+  )
 }

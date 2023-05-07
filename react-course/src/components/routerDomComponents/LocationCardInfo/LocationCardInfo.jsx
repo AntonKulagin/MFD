@@ -1,19 +1,15 @@
-import React, {useEffect, useState} from 'react'
 import cl from './LocationCardInfo.module.css'
 import {useParams} from 'react-router-dom'
-import API from '../../../API'
 import {Loader} from '../Loader'
+import {useCategoryById} from '../../../hooks/useCategoryById'
 
 export const LocationCardInfo = () => {
   const {locId} = useParams()
-  const [location, setLocation] = useState(null)
 
-  useEffect(() => {
-    API.location.getById(locId).then((data) => setLocation(data))
-  }, [locId])
+  const {loading, error, itemById: location} = useCategoryById('location', locId)
 
-  if (location) {
-    return (
+  return (
+    <>
       <div className={cl.info}>
         <div className={cl.info__name}>{location.name}</div>
         <div className={cl.info__data}>
@@ -31,8 +27,8 @@ export const LocationCardInfo = () => {
           </div>
         </div>
       </div>
-    )
-  } else {
-    return <Loader />
-  }
+      {loading && <Loader />}
+      {error && <div className={cl.error}>{error}</div>}
+    </>
+  )
 }

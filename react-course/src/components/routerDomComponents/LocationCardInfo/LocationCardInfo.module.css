@@ -19,3 +19,9 @@
 .info__data span {
   text-decoration: underline;
 }
+.error {
+  color: red;
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
